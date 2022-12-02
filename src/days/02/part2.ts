@@ -29,7 +29,7 @@ export const chooseMove = (theirMove: string, instruction: string): string => {
   }
 };
 
-export const totalScore = (data: string[]) => {
+export const totalScore = (data: string[]): number => {
   return data.reduce((acc: number, match: string) => {
     const [theirMove, instruction] = match.split(" ");
     const myMove = chooseMove(theirMove, instruction);

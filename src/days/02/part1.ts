@@ -5,9 +5,6 @@ type Move = {
   value: number;
 };
 
-const winningValues = [-2, 1];
-const losingValues = [-1, 2];
-
 const moves: Move[] = [
   {
     symbols: ["A", "X"], // rock
@@ -49,7 +46,7 @@ export const compareMoves = (myMove: string, theirMove: string): number => {
   return moveOne + determineWinner(moveOne, moveTwo);
 };
 
-export const totalScore = (data: string[]) => {
+export const totalScore = (data: string[]): number => {
   return data.reduce((acc: number, match: string) => {
     const [theirMove, myMove] = match.split(" ");
     return acc + compareMoves(myMove, theirMove);
