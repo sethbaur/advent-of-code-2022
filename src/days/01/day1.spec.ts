@@ -2,7 +2,7 @@ import { calculateHighest } from "./part1";
 import { calculateThreeHighest } from "./part2";
 import { parseData } from "../../shared";
 
-const rawData = `
+const sampleData = `
 1000
 2000
 3000
@@ -19,7 +19,7 @@ const rawData = `
 10000
 `.trim();
 
-const data = parseData(rawData);
+const data = parseData(sampleData);
 
 describe("day one", () => {
   test("part 1 succeeds", () => {
