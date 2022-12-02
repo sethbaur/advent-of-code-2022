@@ -10,7 +10,11 @@ export const getData = (filename: string) => {
     console.error(err);
   }
 
-  const data = file.split('\n');
+  return parseData(file);
+};
+
+export const parseData = (rawData: string) => {
+  const data = rawData.split('\n');
 
   if (data[data.length - 1] === "") data.pop();
   return data;
