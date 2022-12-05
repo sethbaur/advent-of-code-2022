@@ -1,4 +1,5 @@
 import { getSharedPriority, itemToPriority, totalPriorities } from "./part1";
+import { getBadgeGroups, getSharedPriority as getSharedPriority2, badgeTotals } from "./part2";
 import { parseData } from "../../shared";
 
 const sampleData = `
@@ -28,5 +29,25 @@ describe("day three, part 1", () => {
 
   test("totalPriorities", () => {
     expect(totalPriorities(data)).toBe(157);
+  });
+});
+
+describe("day three, part 2", () => {
+  test("getBadgeGroups", () => {
+    const flatArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    const expected = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"], ["10"]];
+
+    const grouped = getBadgeGroups(flatArray);
+
+    expect(grouped).toEqual(expected);
+  });
+
+  test("getSharedPriority", () => {
+    const group = data.slice(0, 3);
+    expect(getSharedPriority2(group)).toBe(18)
+  });
+
+  test("badgeTotals", () => {
+    expect(badgeTotals(data)).toBe(70);
   });
 });
