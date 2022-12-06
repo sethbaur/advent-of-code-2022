@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-export const getData = (filename: string) => {
+export const getRawData = (filename: string) => {
   const name = `./src/days/${filename}`;
   let file = "";
 
@@ -10,6 +10,11 @@ export const getData = (filename: string) => {
     console.error(err);
   }
 
+  return file;
+};
+
+export const getData = (filename: string) => {
+  const file = getRawData(filename);
   return parseData(file);
 };
 

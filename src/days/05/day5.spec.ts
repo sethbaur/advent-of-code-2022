@@ -77,7 +77,7 @@ describe("day 5, part 1", () => {
   });
 });
 
-describe("day 0, part 2", () => {
+describe("day 5, part 2", () => {
   test("getFinalTopItems", () => {
     expect(getFinalTopItems2(data)).toBe("MCD");
   });
