@@ -1,10 +1,10 @@
 import { getRawData } from "../../shared";
 
-export const findMarker = (dataStream: string): number => {
+export const findMarker = (dataStream: string, length: number): number => {
   const buffer = dataStream.split("");
-  for (let i = 3; i < buffer.length; i++) {
-    const marker = buffer.slice(i - 3, i + 1);
-    if ((new Set(marker)).size === 4) {
+  for (let i = length - 1; i < buffer.length; i++) {
+    const marker = buffer.slice(i - (length - 1), i + 1);
+    if ((new Set(marker)).size === length) {
       return i + 1
     }
   }
@@ -13,4 +13,4 @@ export const findMarker = (dataStream: string): number => {
 
 const data = getRawData("06/input.txt");
 
-export default findMarker(data);
+export default findMarker(data, 4);
